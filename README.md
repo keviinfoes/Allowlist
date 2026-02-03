@@ -3,7 +3,7 @@ The core contracts for Allowlist.
 
 Allowlist is a smart contract based token transfer protection implementation. It only allows high value (> 0.1% balance) transfers to trusted addresses. An address is marked as trusted by sending a low value (<= 0.1% balance) transfer. The main reason for this design is the many cases of lost funds by sending to the wrong address, one type being the address poisoning attack. The split between high and low value allows the sender to verify receival directly with the receiver of the funds before transfering the high value amount.
 
-For example a transfer of funds to an exchange. 
+For example a transfer of funds to an exchange: 
 1. send the low value amount through Allowlist.sol. 
 2. verify receival on the exchange page. 
 3. after verification send the high value amount to the address. 
@@ -44,7 +44,10 @@ cd test_halmos
 ## Gas
 ```npx hardhat test --gas-stats```
 
-Small code design results in low gascosts: 
-remove    ~22830 gas
-send      ~64948 gas
-send_eth  ~46702 gas
+| Function  | Gas     |  
+| --------- | ------- |
+| remove    | ~22830  |
+| send      | ~64948  |
+| send_eth  | ~46702  |
+
+An ETH transfer is 21k gas and a ERC20 transfer ~50k/65k gas. Resulting in allowlist ETH transfers costing 2x a regular transfer and allowlist token transfers costing the same as a regular token transfer (exlusing the token apparoval of ~45k gas). 
