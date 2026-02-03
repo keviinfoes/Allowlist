@@ -17,8 +17,8 @@ contract AllowlistTest_fuzz is Test {
     Allowlist allowlist;
     IWETH weth;
 
-    address public user;
-    address public receiver = address(0x123);
+    address public user = address(this);
+    address public constant receiver = address(0x123);
     
     function setUp() public {
         //deploy weth
@@ -32,7 +32,6 @@ contract AllowlistTest_fuzz is Test {
         //deploy allowlist
         allowlist = new Allowlist();
         //fund user
-        user = address(this);
         vm.deal(user, 1000 ether); // Forge cheatcode
     }
 

@@ -27,3 +27,6 @@ test_halmos/cache
 test_halmos/out
 test_halmos/node_modules
 test_halmos/contracts
+
+/out
+/lib

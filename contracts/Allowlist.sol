@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 contract Allowlist {
     using SafeERC20 for IERC20;
 
-    uint24 public percentage = 1000;
+    uint24 public constant percentage = 1000;
     mapping(address => mapping(address => uint256)) public allowed_eth; 
     mapping(address => mapping(address => mapping(address => uint256))) public allowed;
 

@@ -10,25 +10,41 @@ For example a transfer of funds to an exchange.
 The high value transaction only succeeds to trusted addresses. When copying the address from an address poisoning attack the high value transaction will fail and protect the sender.
 
 ## Dependencies
-Hardhat v3 and Halmos
+[Hardhat v3](https://hardhat.org/docs/getting-started)
+
+```npm install --save-dev hardhat```
+
+[Halmos](https://github.com/a16z/halmos?tab=readme-ov-file)
+
+```uv tool install --python 3.12 halmos```
+
+[Slither](https://github.com/crytic/slither)
+
+```uv tool install slither-analyzer```
 
 ## Test
 
-## Unit & fuzz test (hardhat)
-run: npx hardhat test
+### Unit & fuzz test (hardhat)
+```npx hardhat test```
 
-## Unit test coverage
-run: npx hardhat test --coverage
+### Unit test coverage
+```npx hardhat test --coverage```
 
-## Formal test (halmos)
-run: cd test_halmos
-run: ln -s ../contracts contracts
-run: ln -s ../node_modules node_modules
-run: halmos 
+### Formal test (halmos)
+```
+cd test_halmos
+&& ln -s ../contracts contracts
+&& ln -s ../node_modules node_modules
+&& halmos
+```
+
+### Static analyses (slither)
+``` slither . --foundry-compile-all```
 
 ## Gas
-run: npx hardhat test --gas-stats
+```npx hardhat test --gas-stats```
 
-║ remove          │ 22660           │ 22830   │ 22830  │ 23000 │ 2      ║
-║ send            │ 46600           │ 64948   │ 64948  │ 83296 │ 2      ║
-║ send_eth        │ 36860           │ 46702   │ 46702  │ 56544 │ 2      ║
+Small code design results in low gascosts: 
+remove    ~22830 gas
+send      ~64948 gas
+send_eth  ~46702 gas
