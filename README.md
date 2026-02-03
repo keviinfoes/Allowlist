@@ -1,9 +1,9 @@
 # Allowlist
 The core contracts for Allowlist. 
 
-Allowlist is a smart contract based token transfer protection implementation. It only allows high value (> 0.1% balance) transfers to trusted addresses. An address is marked as trusted by sending a low value (<= 0.1% balance) transfer. The main reason for this design is the many cases of lost funds by sending to the wrong address, one type being the address poisoning attack. The split between high and low value allows the sender to verify receival directly with the receiver of the funds before transfering the high value amount.
+Allowlist is a smart contract based token transfer protection implementation. It only allows high value (> 0.1% balance) transfers to trusted addresses. An address is marked as trusted by sending a low value (<= 0.1% balance) transfer. The main reason for this design is the many cases of lost funds by sending to the wrong address, one type being the address poisoning attack. 
 
-For example a transfer of funds to an exchange: 
+The split between high and low value allows the sender to verify receival directly with the receiver of the funds before transfering the high value amount. For example a transfer of funds to an exchange: 
 1. send the low value amount through Allowlist.sol. 
 2. verify receival on the exchange page. 
 3. after verification send the high value amount to the address. 
