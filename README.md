@@ -33,9 +33,9 @@ The high value transaction only succeeds to trusted addresses. When copying the 
 ### Formal test (halmos)
 ```
 cd test_halmos
-&& ln -s ../contracts contracts
-&& ln -s ../node_modules node_modules
-&& halmos
+ln -s ../contracts contracts
+ln -s ../node_modules node_modules
+halmos
 ```
 
 ### Static analyses (slither)
