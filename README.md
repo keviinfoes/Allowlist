@@ -50,4 +50,4 @@ halmos
 | send      | ~64948  |
 | send_eth  | ~46702  |
 
-An ETH transfer is 21k gas and a ERC20 transfer ~50k/65k gas. Resulting in allowlist ETH transfers costing 2x a regular transfer and allowlist token transfers costing the same as a regular token transfer (exlusing the token apparoval of ~45k gas). 
+An ETH transfer is 21k gas and a ERC20 transfer ~50k/65k gas. Resulting in allowlist ETH transfers costing 2x a regular transfer and allowlist token transfers costing the same as a regular token transfer (exluding the token apparoval of ~45k gas). 
