@@ -1,0 +1,29 @@
+.DS_Store
+
+# Node modules
+/node_modules
+
+# Compilation output
+/dist
+
+# pnpm deploy output
+/bundle
+
+# Hardhat Build Artifacts
+/artifacts
+
+# Hardhat compilation (v2) support directory
+/cache
+
+# Typechain output
+/types
+
+# Hardhat coverage reports
+/coverage
+
+# Halmos 
+test_halmos/DS_Store
+test_halmos/cache
+test_halmos/out
+test_halmos/node_modules
+test_halmos/contracts
